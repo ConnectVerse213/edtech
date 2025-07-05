@@ -111,6 +111,11 @@
             flex-wrap: wrap;
             gap: 40px;
         }
+        .hero-content-mobile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
         
         .hero-text {
             flex: 1;
@@ -135,8 +140,18 @@
             align-items: center;
             gap: 15px;
             margin-bottom: 30px;
+            
         }
-        
+
+        .price-section-mobile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            
+        }
+
+    
         .current-price {
             font-size: 2rem;
             font-weight: 700;
@@ -149,7 +164,7 @@
             color: var(--gray);
         }
         
-        .cta-button {
+        .cta-button-mobile {
             display: inline-block;
             background-color: var(--primary);
             color: white;
@@ -165,6 +180,25 @@
             background-color: var(--secondary);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            .price-section {
+                display: none;
+            }
+            .cta-button {
+                display: none;
+            }
+        }
+        @media (min-width: 770px) {
+            .price-section-mobile {
+                display: none;
+            }
+            .cta-button-mobile {
+                display: none;
+            }
+            .hero-content-mobile {
+                display: none;
+            }
         }
         
         .features-grid {
@@ -278,7 +312,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
+           
             transition: background-color 0.3s ease;
         }
         
@@ -641,6 +675,8 @@
                 grid-template-columns: 1fr;
             }
         }
+
+
     </style>
 </head>
 <body>
@@ -675,7 +711,12 @@
                         <span class="original-price">₹9999</span>
                     </div>
                     
-                    <a href="#" class="cta-button">Purchase this course to get access</a>
+                    <a href="#" class="cta-button">
+                        <button class="cta-button" style="border: none; background-color: var(--primary); color: white; padding: 12px 30px; border-radius: 5px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; margin-bottom: 30px;">Purchase this course to get access</button>
+                        
+                       
+                    
+                    </a>
 
                     <p>You are eligible, if you are:</p>
                     
@@ -707,11 +748,28 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="./src/poster.png" alt="Data Science Course">
+                    <img src="./src/poster.png" alt="Blockchain Development Course">
                 </div>
             </div>
         </div>
+        <br>
+
+        <div class="hero-content-mobile" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;">
+            <div class="price-section-mobile">
+                <span class="current-price">₹249</span>
+                <span class="original-price">₹9999</span>
+            </div>
+            <button class="cta-button-mobile" style="border: none; background-color: var(--primary); color: white; padding: 12px 30px; border-radius: 5px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; margin-bottom: 30px;">Purchase this course to get access</button>
+        
+        </div>
+
     </section>
+
+    
+ 
+
+    
+   
 
     <!-- What Participants after the bootcamp Section -->
     <section class="learn-section">
@@ -883,7 +941,7 @@
                 </div>
                 <!-- Break Section 1 -->
                 <div class="accordion-item">
-                    <div class="accordion-header">
+                    <div class="accordion-header" style="background-color: #f4d2bc;">
                         <span>Break</span>
                         <span>15min</span>
                     </div>
@@ -1047,7 +1105,7 @@
                 </div>
                 <!-- Break Section 2 -->
                 <div class="accordion-item">
-                    <div class="accordion-header">
+                    <div class="accordion-header" style="background-color: #c7f4bc;">
                         <span>Day 1 Completed</span>
                         <span>👋</span>
                     </div>
@@ -1141,7 +1199,7 @@
                 </div>
                 <!-- Break Section 3 -->
                 <div class="accordion-item">
-                    <div class="accordion-header">
+                    <div class="accordion-header" style="background-color: #f4d2bc;">
                         <span>Break</span>
                         <span>15min</span>
                     </div>
@@ -1412,6 +1470,26 @@
                     </div>
                 </div>
 
+                     <!-- Break Section 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" style="background-color: #c7f4bc;">
+                        <span>Day 2 Completed</span>
+                        <span>👋</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Hurray! You are now on the way to crack a high paying job in web3! </span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>
@@ -1476,8 +1554,8 @@
     <section class="community-section">
         <div class="container">
             <div class="section-title">
-                <h2>OUR COMMUNITY</h2>
-                <p>Multiple Community Memberships</p>
+                <h2>TRUSTED BY</h2>
+                <p>Multiple Startups & Communities</p>
                 <p class="community-description">A tight-knit learning community of thousands of students, working professionals & industry leaders</p>
             </div>
             
@@ -1753,9 +1831,7 @@
             });
             
             // Open first accordion item by default
-            if (accordionHeaders.length > 0) {
-                accordionHeaders[0].click();
-            }
+            
         });
     </script>
 
