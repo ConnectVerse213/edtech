@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Blockchain Developer in a single Day | By ConnectVerse</title>
+    <link rel="icon" href="./src/logo/light background/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --success: #38b000;
+            --danger: #ef233c;
+            --warning: #ffbe0b;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 40px 0;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), rgba(131, 56, 236, 0.1));
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .hero-text h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        .price-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .current-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .original-price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: var(--gray);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark);
+        }
+        
+        .feature-item i {
+            color: var(--success);
+        }
+        
+        .social-share {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-share a {
+            color: var(--gray);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-share a:hover {
+            color: var(--primary);
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* What You'll Learn Section */
+        .learn-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .learn-item {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .learn-item i {
+            color: var(--success);
+            margin-top: 3px;
+        }
+        
+        /* Course Content Section */
+        .content-section {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+        
+        .accordion {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .accordion-header {
+            background-color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background-color: #f1f5f9;
+        }
+        
+        .accordion-content {
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content-inner {
+            padding: 0 20px;
+        }
+        
+        .lecture-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .lecture-item:last-child {
+            border-bottom: none;
+        }
+        
+        .lecture-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .lecture-info i {
+            color: #6c757d;
+        }
+        
+        .lecture-duration {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .hands-on-badge {
+            display: inline-block;
+            background-color: #3a86ff;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-left: 10px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(58, 134, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 6px rgba(58, 134, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(58, 134, 255, 0);
+            }
+        }
+        
+        /* outcome Section */
+        .outcome-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .outcome-list {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .requirement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .requirement-item i {
+            color: var(--gray);
+            margin-top: 3px;
+        }
+
+        /* Community Section Styles */
+        .community {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .community-section {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+        
+        .community-description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+        }
+        
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+        
+        .community-item {
+            text-align: center;
+            width: 100%;
+            max-width: 220px;
+            transition: transform 0.3s ease;
+        }
+        
+        .community-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .community-logo {
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .community-logo img {
+            max-width: 100%;
+            max-height: 50px;
+            object-fit: contain;
+        }
+        
+        .community-item p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .community-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .community-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 15px;
+            }
+            
+            .community-logo {
+                height: 70px;
+                padding: 10px;
+            }
+            
+            .community-item p {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .community-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+            
+            .community-logo {
+                height: 60px;
+            }
+        }
+
+        /* FAQ Section Styles */
+        .faq-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+            background-color: var(--light);
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: white;
+        }
+        
+        .faq-answer-inner {
+            padding: 0 20px 20px;
+        }
+        
+        .faq-answer p {
+            margin-bottom: 0;
+            color: var(--gray);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 15px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text, .hero-image {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .price-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .learn-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo"><img src="./src/logo/light background/logo_with_name-2.png"/></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="https://linktr.ee/connectverseweb3" style="text-decoration: none;">Join us today</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                        <a href="https://linktr.ee/connectverseweb3" style="color: var(--gray); text-decoration: none;">ConnectVerse</a> 
+                        <span style="margin: 0 5px; color: var(--gray);">»</span> 
+                        <a href="#" style="color: var(--gray); text-decoration: none;">Become a Blockchain Developer in a Day</a>
+                    </nav>
+                    <h1>Become a Blockchain Developer in a Day</h1>
+                    <p>From learning Web3 to Landing ₹50 LPA Jobs</p>
+                    
+                    <div class="price-section">
+                        <span class="current-price">₹249</span>
+                        <span class="original-price">₹9999</span>
+                    </div>
+                    
+                    <a href="#" class="cta-button">Purchase this course to get access</a>
+
+                    <p>You are eligible, if you are:</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>A College student ( 1st year/2nd year/3rd year/4th year)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>A beginner from tech/non-tech background</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>A Web2 developer looking to switch</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Exploring a Web3 career</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-share">
+                        <span>Find Us:</span>
+                        <a href="https://instagram.com/pranavverma213"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/pranavvtweet"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/k-abhiram"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/+917306454612"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="./src/poster.png" alt="Data Science Course">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Participants after the bootcamp Section -->
+    <section class="learn-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Participants earn after the bootcamp</h2>
+            </div>
+            
+            <div class="learn-grid">
+                <div class="learn-item">
+                    <i class="fas fa-check"></i>
+                    <span>Internship certificate from Us to show in your universities</span>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-check"></i>
+                    <span>Slides, code, and session recordings</span>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-check"></i>
+                    <span>Certificate of completion for the bootcamp</span>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-check"></i>
+                    <span>Job resource kit (companies hiring, sample resumes)</span>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-check"></i>
+                    <span>Access to our exclusive Web3 job portal</span>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-check"></i>
+                    <span>Access to community of like-minded learners</span>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-check"></i>
+                    <span>Personalized mentorship sessions twice per month</span>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-check"></i>
+                    <span>Opportunity to work with our team full-time</span>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-check"></i>
+                    <span>Project feedback after submission</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bootcamp Schedule</h2>
+                <p>Expand all sections</p>
+                <p>14 sections • 10hr bootcamp period</p>
+            </div>
+            
+            <div class="accordion" id="courseAccordion">
+                <!-- Section 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>The History of Money & Why Bitcoin</span>
+                        <span>4 lectures • 30min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Barter → Gold → Fiat → Digital → Bitcoin</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>How banks work (centralization, intermediaries)</span>
+                                </div>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>The problem with centralization</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Why Satoshi Nakamoto created Bitcoin</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>How Centralized Systems Work</span>
+                        <span>3 lectures • 30min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Central servers vs distributed systems</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Ownership and censorship</span>
+                                </div>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Bank ledger vs blockchain ledger</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Blockchain Deep Dive</span>
+                        <span>4 lectures • 45min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Blocks, transactions, hashes</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Previous hash linking, genesis block</span>
+                                </div>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Why blockchain is immutable</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Demo: creating hashes live</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Break Section 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Break</span>
+                        <span>15min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Dont worry about any lecture here, just keep your mind chill!</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Bitcoin vs Ethereum</span>
+                        <span>4 lectures • 45min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Why we needed Ethereum</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Miners vs validators</span>
+                                </div>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Smart contracts explained</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Native coins vs ERC20 tokens</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 5 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Wallets & Testnets</span>
+                        <span>4 lectures • 45min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Public/private key concepts</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Install and use MetaMask</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Connect to Sepolia testnet</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Get test ETH from faucet</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 6 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Gas Fees & The EVM</span>
+                        <span>4 lectures • 45min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>What is gas?</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Why transactions cost money</span>
+                                </div>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Gas estimation examples</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>How the EVM acts as the “world computer”</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 7 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Solidity 101 - First Smart Contract</span>
+                        <span>2 lectures • 45min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Solidity syntax like Variables, Functions, Visibility, Mappings</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Deploy a Hello World contract in Remix</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Break Section 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Day 1 Completed</span>
+                        <span>👋</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Hurray! You are now on the way to create your first project!<br>Let's meet on Sunday</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 8 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Create Your ERC20 Token</span>
+                        <span>4 lectures • 45min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>What is ERC20?</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Modify OpenZeppelin ERC20 contract</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Deploy on Sepolia</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Check token in MetaMask</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 9 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Creating NFTs (ERC721)</span>
+                        <span>3 lectures • 45min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Difference between ERC20 and ERC721</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Deploy an NFT contract</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Mint an NFT and view on explorer</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Break Section 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Break</span>
+                        <span>15min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Dont worry about any lecture here, just keep your mind chill!</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 10 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Build a To-Do DApp</span>
+                        <span>4 lectures • 45min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Smart contract for ToDo tasks</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Deploy on Sepolia</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Interact via Remix or basic frontend</span>
+                                </div>
+                                <span class="hands-on-badge">Hands-On Session</span>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>How frontends talk to contracts</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 11 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Traditional Finance vs DeFi</span>
+                        <span>4 lectures • 45min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>How banks work vs DeFi protocols</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Uniswap vs banks (how swaps work)</span>
+                                </div>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Liquidity pools and AMMs explained</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Demo of swapping tokens on testnet Uniswap</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 12 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>How to Land ₹50 LPA+ Blockchain Jobs</span>
+                        <span>8 lectures • 45min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Blockchain job market trends in India and globally</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <div>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <span> High-paying roles:</span>
+                                        <ul style="padding-left: 50px;">
+                                            <li>Smart Contract Developer</li>
+                                            <li>Blockchain Engineer</li>
+                                            <li>Protocol Engineer</li>
+                                            <li>Web3 Frontend/Full-stack Developer</li>
+                                            <li>Security Auditor</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <div>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <span> Skills recruiters look for:</span>
+                                        <ul style="padding-left: 50px;">
+                                            <li>Solidity</li>
+                                            <li>Hardhat/Foundry</li>
+                                            <li>Security best practices</li>
+                                            <li>Frontend (React, ethers.js)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <div>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <span> How to build your portfolio:</span>
+                                        <ul style="padding-left: 50px;">
+                                            <li>GitHub projects</li>
+                                            <li>Publishing smart contracts</li>
+                                            <li>Participating in hackathons</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <div>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <span> How to get noticed:</span>
+                                        <ul style="padding-left: 50px;">
+                                            <li>LinkedIn presence</li>
+                                            <li>Posting code and blogs</li>
+                                            <li>Contributing to open-source</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <div>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <span> Resume tips for Web3:</span>
+                                        <ul style="padding-left: 50px;">
+                                            <li>Highlight projects</li>
+                                            <li>Smart contract links</li>
+                                            <li>Testnet deployments</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <div>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <span> Interview prep:</span>
+                                        <ul style="padding-left: 50px;">
+                                            <li>Solidity interview questions</li>
+                                            <li>Contract auditing questions</li>
+                                            <li>Live coding rounds</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <div>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <span> Salary ranges for different experience levels:</span>
+                                        <ul style="padding-left: 50px;">
+                                            <li>Fresher</li>
+                                            <li>2-3 years experience</li>
+                                            <li>Senior developers</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Freelance/Web3 grants as income paths</span>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 13 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Final Q&A, Project Briefing, and Wrap-Up</span>
+                        <span>4 lectures • 60min</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <div>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <span> Choosing your final project</span>
+                                        <ul style="padding-left: 50px;">
+                                            <li>Deploy ERC20 token</li>
+                                            <li>Mint an NFT collection</li>
+                                            <li>Complete ToDo DApp</li>
+                                            <li>Write a blog: “How I Became a Blockchain Developer in a Day</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- <span class="lecture-duration">5:12</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Community invites</span>
+                                </div>
+                                <!-- <span class="lecture-duration">12:45</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Certificates</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                            <div class="lecture-item">
+                                <div class="lecture-info">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>Group photo or screenshot</span>
+                                </div>
+                                <!-- <span class="lecture-duration">9:03</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Outcomes Section -->
+    <section class="outcome-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Outcomes</h2>
+                <h3>By the end of this weekend bootcamp, you will:</h3>
+            </div>
+            
+            <div class="outcome-list">
+                <div class="requirement-item">
+                    <i class="fas fa-circle"></i>
+                    <span>Learn the fundamentals of how blockchain and cryptocurrencies work</span>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-circle"></i>
+                    <span>Understand why blockchain matters and where it’s used today</span>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-circle"></i>
+                    <span>Deploy your first piece of code on a real blockchain network</span>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-circle"></i>
+                    <span>Build simple yet impressive projects you can showcase on your resume</span>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-circle"></i>
+                    <span>Discover how to start a career in blockchain—even if you’re a complete beginner</span>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-circle"></i>
+                    <span>Learn how to aim for blockchain roles that pay ₹50 LPA and above</span>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-circle"></i>
+                    <span>Understand what companies look for in blockchain developers</span>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-circle"></i>
+                    <span>Get practical tips on building a strong portfolio and writing a resume that stands out</span>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-circle"></i>
+                    <span>Learn how to get noticed by recruiters and how to ask for referrals the right way</span>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-circle"></i>
+                    <span>Become part of a growing community of learners and professionals in the Web3 space</span>
+                </div>
+            </div>
+            <div class="section-title">
+                <h3>This bootcamp is designed not only to teach you blockchain basics but to help you take real steps toward building a high-paying career in this exciting field.</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="community-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>OUR COMMUNITY</h2>
+                <p>Multiple Community Memberships</p>
+                <p class="community-description">A tight-knit learning community of thousands of students, working professionals & industry leaders</p>
+            </div>
+            
+            <div class="community" id="community-partnersgallery"></div>
+            <!-- <div class="community-grid">
+                
+                <div class="community-item">
+                    <div class="community-logo">
+                        <img src="#" alt="Chainlink">
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about the bootcamp</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need any prior experience in coding or blockchain to join this bootcamp?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. This bootcamp is beginner-friendly. We start from the basics of how blockchain works and guide you step by step to deploying your first smart contract.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What tools or software do I need to participate?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Just a laptop, a stable internet connection, and Google Chrome. We’ll show you how to set up everything else, including MetaMask and Remix IDE (all free).</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Will this bootcamp help me get a job in blockchain?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. You will learn practical skills, build real projects, and understand how to position yourself for blockchain developer roles. We also cover how to create a strong portfolio, write a winning resume, and get referrals.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What kind of certificate will I receive?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You’ll receive an Internship Certificate from [Your Company Name], a Bootcamp Completion Certificate, and access to our exclusive job portal and mentorship programs.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What happens if I miss a session?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All sessions will be recorded. You’ll get access to the recordings and resources to catch up anytime.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Will I get any mentorship or help after the bootcamp?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. You will have access to our private community of learners and mentors, 2 personalized mentorship sessions per month and continuous support for your projects and career planning.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 7 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What projects will I build during the bootcamp?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You will deploy your own cryptocurrecy token, Mint your first NFT, Build a simple To-Do decentralized app, One Big Project ( That’s a surprise ) - This can be also showcased on your resume</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 8 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What if I’m not a developer but still curious about blockchain?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>That’s completely fine. We designed this program to be accessible to non-developers, entrepreneurs, and curious learners. You’ll understand the concepts clearly and get guided practice.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 9 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What are the timings of the bootcamp?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Saturday: 6 PM to 11 PM<br>Sunday: 9 AM to 2 PM<br>There will be short breaks in between.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 10 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is there any opportunity to work with your company full-time?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Participants who perform well and show dedication will have the chance to apply for internships and full-time positions with us or our partner companies.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 11 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How much can I expect to earn in a blockchain job?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Entry-level salaries can start from ₹8–15 LPA. With skills and experience, you can target roles that pay ₹30–50 LPA and higher, especially in smart contract development and DeFi projects.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 12 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I get referrals into companies?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We will guide you on how to build connections, approach professionals respectfully, and ask for referrals in a way that works. You’ll also get access to our network of recruiters and industry contacts.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 13 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer any refunds if I can’t attend?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Please check our refund and reschedule policy on the registration page or reach out to our support team for options.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 14 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are there any group discounts available?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer group discounts for teams of 10 or more. Please contact +917306454612 over WhatsApp for more information about group pricing.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 15 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I register?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can register directly on our website. Once you sign up, you’ll receive a confirmation email with all details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <img style="width: 200px;" src="./src/logo/embroidery.png" />
+                    <ul class="footer-links">
+                        <li><a href="https://linktr.ee/connectverseweb3">India's biggest Web3 Media Agency</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Courses</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Blockchain Development</a></li>
+                        <li><a href="#">Career Guidance</a></li>
+                        <li><a href="#">App Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Social Media</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://linktr.ee/connectverseweb3">LinkTree</a></li>
+                        <li><a href="https://x.com/ConnectVerse3">X (prev. Twitter)</a></li>
+                        <li><a href="https://www.linkedin.com/company/connect-verse/">LinkedIn</a></li>
+                        <li><a href="https://t.me/connectverseweb3">Telegram Community</a></li>
+                        <li><a href="https://chat.whatsapp.com/E8hwgg4VsWtFSkA73U6Fh4">WhatsApp Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Know our Founders</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://instagram.com/pranavverma213">Pranav Verma</a></li>
+                        <li><a href="https://abhiram.bio.link">Abhiram K</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 ConnectVerse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Accordion Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const accordionItem = header.parentElement;
+                    const accordionContent = header.nextElementSibling;
+                    
+                    // Close all other accordion items
+                    document.querySelectorAll('.accordion-item').forEach(item => {
+                        if (item !== accordionItem) {
+                            const otherContent = item.querySelector('.accordion-content');
+                            otherContent.style.maxHeight = null;
+                            item.querySelector('.accordion-header').classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (accordionContent.style.maxHeight) {
+                        accordionContent.style.maxHeight = null;
+                        header.classList.remove('active');
+                    } else {
+                        accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                        header.classList.add('active');
+                    }
+                });
+            });
+            
+            // Open first accordion item by default
+            if (accordionHeaders.length > 0) {
+                accordionHeaders[0].click();
+            }
+        });
+    </script>
+
+    <script>
+        const community_folderId = '1_3iP81yXMJSLUM8sPl7EDmm10odNQ2kI';
+        const community_apiKey = 'AIzaSyBDJui9IsGMJrdgp-b46_eYHWuqHk0xqBk';
+        const community_galleryDiv = document.getElementById('community-partnersgallery');
+
+        fetch(`https://www.googleapis.com/drive/v3/files?q='${community_folderId}'+in+parents&key=${community_apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.files && data.files.length > 0) {
+            data.files.forEach(file => {
+                if (file.mimeType.includes("image")) {
+                const img = document.createElement('img');
+                img.src = `https://drive.google.com/thumbnail?export=view&id=${file.id}`;
+                img.style.width = '80px';
+                img.style.margin = '10px';
+                community_galleryDiv.appendChild(img);
+                }
+            });
+            } else {
+            community_galleryDiv.innerHTML = 'No images found.';
+            }
+        });
+    </script>
+
+    <script>
+        const sponsorship_folderId = '1Uu-U5m4q3f6iV2ifMY6favZQGYjuRXyK';
+        const sponsorship_apiKey = 'AIzaSyBDJui9IsGMJrdgp-b46_eYHWuqHk0xqBk';
+        const sponsorship_galleryDiv = document.getElementById('community-partnersgallery');
+
+        fetch(`https://www.googleapis.com/drive/v3/files?q='${sponsorship_folderId}'+in+parents&key=${sponsorship_apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.files && data.files.length > 0) {
+            data.files.forEach(file => {
+                if (file.mimeType.includes("image")) {
+                const img = document.createElement('img');
+                img.src = `https://drive.google.com/thumbnail?export=view&id=${file.id}`;
+                img.style.width = '70px';
+                img.style.margin = '10px';
+                sponsorship_galleryDiv.appendChild(img);
+                }
+            });
+            } else {
+            sponsorship_galleryDiv.innerHTML = 'No images found.';
+            }
+        });
+    </script>
+
+    <script>
+        // FAQ Functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = question.nextElementSibling;
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.querySelector('.faq-question').classList.remove('active');
+                        item.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+                
+                // Toggle current FAQ
+                question.classList.toggle('active');
+                
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
